@@ -1,0 +1,4 @@
+SELECT *, (MSRP - buyPrice) as prof, (MSRP - buyPrice) * quantityInStock as allp
+FROM products
+WHERE (MSRP - buyPrice) > (SELECT AVG(MSRP - buyPrice) FROM products)
+ORDER BY allp DESC;

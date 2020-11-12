@@ -1,0 +1,4 @@
+SELECT Name, SUM(Name) as count, Population, AVG(LifeExpectancy)
+FROM Country
+WHERE Population > (SELECT AVG(Population) FROM Country)
+ORDER BY count ASC;

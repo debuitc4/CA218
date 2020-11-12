@@ -1,0 +1,4 @@
+SELECT *, (buyPrice - (SELECT AVG(buyPrice) FROM products) as diff
+FROM products 
+WHERE buyPrice > (SELECT AVG(buyPrice) FROM products)
+ORDER BY diff ASC;
