@@ -1,0 +1,8 @@
+SELECT * FROM customers
+WHERE country
+IN (SELECT country 
+    FROM customers 
+    GROUP BY country 
+    HAVING MIN(creditLimit) > (SELECT MAX(creditlimit) 
+                               from customers
+                               WHERE country="Austria"));

@@ -1,0 +1,7 @@
+SELECT DISTINCT contactFirstName
+FROM customers c1 JOIN sakila.customer c2
+ON c2.first_name = c1.contactFirstName;
+
+SELECT DISTINCT c.contactFirstName, c.contactLastName, SUM(
+FROM customers c JOIN sakila.customers c2
+ON c2.first_name = c.contactFirstName

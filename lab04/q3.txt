@@ -1,0 +1,4 @@
+SELECT p.productName, p.productDescription, (od.quantityOrdered * p.productCode) as sales
+FROM products as p JOIN orderdetails as od on p.productCode = od.productCode
+ORDER BY sales DESC
+Limit 3;

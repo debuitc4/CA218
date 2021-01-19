@@ -1,0 +1,4 @@
+SELECT p.productLine, ((od.priceEach * od.quantityOrdered) - p.buyPrice) as income
+FROM products as p JOIN orderdetails as od ON p.productCode = od.productCode
+ORDER BY income DESC
+Limit 1;
